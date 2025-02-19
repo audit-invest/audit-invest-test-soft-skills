@@ -402,40 +402,27 @@ function protectEmail(){
         localStorage.setItem('email', inputEmail.value);
         if (countPointsMotivation !== undefined) {
             localStorage.setItem('countPointsMotivation', countPointsMotivation.toString());
-        } else {
-            console.log('Ошибка: countPointsMotivation не определена');
         }
 
         if (countPointsLider !== undefined) {
             localStorage.setItem('countPointsLider', countPointsLider.toString());
-        } else {
-            console.log('Ошибка: countPointsLider не определена');
         }
 
         if (countPointsManage !== undefined) {
             localStorage.setItem('countPointsManage', countPointsManage.toString());
-        } else {
-            console.log('Ошибка: countPointsManage не определена');
         }
 
         if (countPointsEmotion !== undefined) {
             localStorage.setItem('countPointsEmotion', countPointsEmotion.toString());
-        } else {
-            console.log('Ошибка: countPointsEmotion не определена');
         }
 
         if (countPointsAI !== undefined) {
             localStorage.setItem('countPointsAI', countPointsAI.toString());
-        } else {
-            console.log('Ошибка: countPointsAI не определена');
         }
 
         if (countPointsComunication !== undefined) {
             localStorage.setItem('countPointsComunication', countPointsComunication.toString());
-        } else {
-            console.log('Ошибка: countPointsComunication не определена');
         }
-
         location.href = '../result/index.html';
     } else {
         pErrorEmail.classList.remove('display-none');
@@ -444,7 +431,6 @@ function protectEmail(){
 
 // Функция для обработки выбора ответа
 function selectAnswer(correct, type) {
-    console.log(`Вы выбрали ответ с правильностью ${correct} и типом ${type}`);
     if(type == 'Комунікаційні навички'){
         countPointsComunication += correct;
     } else if( type == 'Лідерські якості'){
@@ -458,7 +444,6 @@ function selectAnswer(correct, type) {
     } else if( type == 'Вміння мотивувати'){
        countPointsMotivation += correct;
     }
-    console.log(`Обновленные данные. Комуникация: ${countPointsComunication}, Лидер: ${countPointsLider}, Управление: ${countPointsManage}, Емоциональный: ${countPointsEmotion}, AI: ${countPointsAI}, Мотивировать: ${countPointsMotivation}`)
 
     // Можете добавить логику для проверки правильности и перехода к следующему вопросу
     printQuestions();
